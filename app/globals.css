@@ -2,32 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+h1,
+p {
+  @apply text-textColor;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+h1 {
+  @apply text-[2.5rem] md:text-[3.5rem] font-bold;
+}
+
+.container {
+  @apply px-4;
+}
+
+@layer components {
+  .button-primary {
+    @apply bg-accentColor border border-accentColor py-2 px-8 rounded-3xl;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .button-secondary {
+    @apply border border-textColor text-textColor py-2 px-6 rounded-3xl hover:bg-black hover:text-white transition;
   }
 }
